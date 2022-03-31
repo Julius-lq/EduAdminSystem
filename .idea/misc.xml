@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/drawable/selector_exam.xml" value="0.1" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/drawable/selector_grade.xml" value="0.1" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/drawable/selector_individual.xml" value="0.1" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/drawable/selector_timetable.xml" value="0.1" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/activity_main.xml" value="0.1638888888888889" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/activity_notice.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/activity_welcome.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/bottom.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/grade.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/notice_item.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/pop_item.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/tab1.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/table.xml" value="0.6" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/timetable.xml" value="0.1431159420289855" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/layout/top.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/86139/AndroidStudioProjects/EduAdminSystem-3.1.0/app/src/main/res/menu/main_bottom_navigation.xml" value="0.22868217054263565" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/individual.xml" value="0.12335359675785208" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

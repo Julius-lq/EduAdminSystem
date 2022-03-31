@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zyh.fragment">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name="com.zyh.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/AppTheme">
+
+        <activity android:name="com.zyh.activities.NoticeActivity"
+            android:theme="@style/AppTheme_2"/>
+        <activity
+            android:name="com.zyh.activities.NoteActivity"
+            android:theme="@style/AppTheme_2" />
+        <activity
+            android:name="com.zyh.activities.About"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_2" />
+
+        <activity
+            android:name="com.zyh.activities.welcomeActivity"
+            android:icon="@mipmap/ic_launcher"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zyh.activities.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_2" />
+        <activity
+            android:name="com.zyh.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_1" />
+        <activity
+            android:name="com.zyh.activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_2" />
+
+        <receiver android:name="com.zyh.widget.TableWidgetProvider_1">
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_provider_info" />
+
+            <intent-filter>
+                <action android:name="com.ryg.chapter_5.action.CLICK" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.zyh.eduadminsystem.NEXT_WEEK" />
+                <action android:name="com.zyh.eduadminsystem.NOW_WEEK" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
