@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@drawable/drawable_round_edge"
     android:layout_width="match_parent"
@@ -23,12 +24,13 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:paddingLeft="10dp"
-            android:src="@drawable/icon_calendar"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/icon_calendar" />
         <!--009966 20-->
         <TextView
             android:id="@+id/week"
@@ -45,19 +47,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:src="@drawable/icon_time"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:paddingStart="10dp"
+            android:src="@drawable/icon_time" />
         <!--009966 20-->
         <TextView
             android:id="@+id/time"
             android:padding="10dp"
             android:text="第1-2节 09:00 - 09:50"
             android:textColor="#000"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
@@ -65,19 +68,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:src="@drawable/icon_teacher"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:paddingStart="10dp"
+            android:src="@drawable/icon_teacher2"
+            tools:ignore="RtlSymmetry" />
         <!--009966 20-->
         <TextView
             android:id="@+id/teacher"
             android:padding="10dp"
             android:text="邓广慧讲师（高校）"
             android:textColor="#000"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
@@ -86,12 +91,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:src="@drawable/icon_locate"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:paddingStart="8dp"
+            android:src="@drawable/icon_location"
+            tools:ignore="RtlSymmetry" />
         <!--009966 20-->
         <TextView
             android:id="@+id/locate"

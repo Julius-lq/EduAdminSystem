@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@mipmap/exam_pressed" android:state_selected="true" />
-    <item android:drawable="@mipmap/exam" />
+    <item android:drawable="@drawable/exam_pressed" android:state_selected="true" />
+    <item android:drawable="@drawable/exam" />
 </selector>

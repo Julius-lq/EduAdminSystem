@@ -107,7 +107,9 @@ public class MainActivity extends AppCompatActivity {
         addFeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FeedbackActivity.actionStart(MainActivity.this, token);
+//                FeedbackActivity.actionStart(MainActivity.this, token);
+                Intent intent = new Intent(MainActivity.this, FeedbackActivity2.class);
+                startActivity(intent);
             }
         });
         notice.setOnClickListener(new OnClickListener() {

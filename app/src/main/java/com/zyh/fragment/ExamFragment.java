@@ -47,7 +47,7 @@ public class ExamFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.exam, container, false);
+        View view = inflater.inflate(R.layout.fragment_exam, container, false);
         isFinished = false;
         recyclerView = view.findViewById(R.id.exam_recycler_view);
         noGrade = view.findViewById(R.id.no_exam);

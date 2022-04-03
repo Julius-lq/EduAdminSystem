@@ -1,74 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorMain"
-              android:layout_width="match_parent"
-              android:layout_height="45dp">
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/colorMain">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/renovate"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/ic_renovate"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_renovate" />
+
     <TextView
         android:id="@+id/top_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="课程表"
         android:layout_centerInParent="true"
+        android:text="课程表"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:textStyle="bold" />
+
     <LinearLayout
         android:id="@+id/addFeedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
         android:padding="5dp"
         android:visibility="invisible">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="意见反馈"
             android:textColor="#fff"
-            android:textSize="13sp"/>
+            android:textSize="13sp" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/feedback"
-            android:layout_marginLeft="5dp"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/feedback" />
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/notice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp">
 
+        <!--        <ImageView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:src="@mipmap/notice" />-->
         <ImageView
             android:id="@+id/notice_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/notice" />
+            android:src="@drawable/notice" />
+
         <ImageView
             android:id="@+id/notice_pot"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/dot"
             android:layout_alignRight="@+id/notice_img"
-            android:visibility="invisible"/>
+            android:src="@mipmap/dot"
+            android:visibility="invisible" />
     </RelativeLayout>
-
 
 
 </RelativeLayout>

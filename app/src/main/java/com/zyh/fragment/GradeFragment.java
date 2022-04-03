@@ -50,7 +50,7 @@ public class GradeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mainActivity = (MainActivity)getActivity();
-        View view = inflater.inflate(R.layout.grade, container, false);
+        View view = inflater.inflate(R.layout.fragment_grade, container, false);
         isFinished = false;
         tip = view.findViewById(R.id.tip);
         noGrade = view.findViewById(R.id.no_grade);

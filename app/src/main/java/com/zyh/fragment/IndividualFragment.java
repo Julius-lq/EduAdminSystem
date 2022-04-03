@@ -27,7 +27,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.zyh.activities.About;
+import com.zyh.activities.AboutActivity;
 import com.zyh.activities.LoginActivity;
 import com.zyh.activities.MainActivity;
 import com.zyh.beans.HeadPicBean;
@@ -81,7 +81,7 @@ public class IndividualFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.individual, container, false);
+        View view = inflater.inflate(R.layout.fragment_individual, container, false);
         final MainActivity mainActivity = (MainActivity) getActivity();
 
         LoginBean.Datas.StuInfo stuInfo = ((LoginBean.Datas) mainActivity.loginBean.getData()).getStuInfo();
@@ -106,7 +106,7 @@ public class IndividualFragment extends Fragment {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mainActivity, About.class);
+                Intent intent = new Intent(mainActivity, AboutActivity.class);
                 startActivity(intent);
             }
         });

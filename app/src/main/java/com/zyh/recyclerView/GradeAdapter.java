@@ -100,10 +100,10 @@ public class GradeAdapter extends RecyclerView.Adapter<GradeAdapter.ViewHolder> 
             @Override
             public void onClick(View view) {
                 if (holder.content.getVisibility()==View.GONE){
-                    holder.triangle.setImageResource(R.mipmap.triangle_down);
+                    holder.triangle.setImageResource(R.drawable.triangle_down);
                     holder.content.setVisibility(View.VISIBLE);
                 }else{
-                    holder.triangle.setImageResource(R.mipmap.triangle_right);
+                    holder.triangle.setImageResource(R.drawable.triangle_right);
                     holder.content.setVisibility(View.GONE);
                 }
             }

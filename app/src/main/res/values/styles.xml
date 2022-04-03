@@ -1,6 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
+    <!--    app基本主题，已被覆盖-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorMain</item>
@@ -8,10 +9,12 @@
         <item name="colorAccent">@color/colorMain</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
     <style name="popwindow_anim_style">
         <item name="android:windowEnterAnimation">@anim/popup_show</item>
         <item name="android:windowExitAnimation">@anim/popup_gone</item>
     </style>
+
     <style name="ScheduleHeaderStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingTop">8dp</item>
@@ -21,17 +24,28 @@
         <item name="android:gravity">center</item>
         <item name="android:background">@color/nodeIndex</item>
     </style>
+
+
+    <!--    主页面的状态栏(包括底部bottom)-->
     <style name="AppTheme_1" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <!--    欢迎界面、关于界面和登录界面的状态栏(即出去自定义状态栏的默认主题)-->
     <style name="AppTheme_2" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <!--    关于界面的toolbat配置-->
+    <style name="Theme.Tools.PopupOverlay" parent="@style/Widget.AppCompat.PopupMenu.Overflow" />
+
+    <style name="Theme.Tools.AppBarOverlay" parent="@style/ThemeOverlay.MaterialComponents.ActionBar" />
+
 
 </resources>

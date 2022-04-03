@@ -19,7 +19,7 @@
             android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/timetable_pressed"
+            android:src="@drawable/timetable_pressed"
             android:background="#00000000"/>
         <TextView
             android:id="@+id/id_tab_weixin_text"
@@ -41,7 +41,7 @@
             android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/grade"
+            android:src="@drawable/grade"
             android:background="#00000000"/>
         <TextView
             android:id="@+id/id_tab_frd_text"
@@ -62,7 +62,7 @@
             android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/exam"
+            android:src="@drawable/exam"
             android:background="#00000000"/>
         <TextView
             android:id="@+id/id_tab_address_text"
@@ -83,7 +83,7 @@
             android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/individual"
+            android:src="@drawable/individual"
             android:background="#00000000"/>
         <TextView
             android:id="@+id/id_tab_setting_text"

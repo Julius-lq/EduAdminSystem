@@ -1,116 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#fffafafa">
 
-    <RelativeLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border_bottom">
-        <ImageView
-            android:id="@+id/return_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/return_img"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_centerVertical="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="关于"
-            android:layout_margin="20dp"
-            android:layout_centerInParent="true"
-            android:textColor="#000"
-            android:textSize="18sp" />
+        android:background="@color/white"
+        android:stateListAnimator="@null"
+        android:theme="@style/Theme.Tools.AppBarOverlay">
 
-    </RelativeLayout>
-    <LinearLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/Widget.AppCompat.ActionBar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.0dip"
+            android:background="@color/itemBackColor" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fffafafa"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:srlEnablePureScrollMode="true">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:background="#fffafafa"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fffafafa"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="0dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:elevation="5dp"
+                        android:src="@mipmap/ic_launcher_foreground" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/about_padding_top"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="版本号：" />
+
+                        <TextView
+                            android:id="@+id/version_word"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3.575" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/about_padding_top"
+                        android:text="长理教务" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/about_padding_top"
+                        android:text="本项目开源 欢迎star和fork" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/about_padding_top"
+                        android:autoLink="web"
+                        android:text="@string/github_website" />
+
+                    <TextView
+                        android:id="@+id/copy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/about_padding_top"
+                        android:background="@drawable/text_underline"
+                        android:text="点我复制"
+                        android:textColor="@color/colorMain" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关于我们"
+                        android:textColor="#424242"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/qqGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/about_padding_top"
+                        android:text="@string/about_word" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/reward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/about_padding_top"
+                    android:background="@drawable/button_radius_reward"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="赞赏1￥"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_gravity="bottom"
+        android:gravity="center">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_foreground" />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/about_padding_top">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="版本号："/>
-            <TextView
-                android:id="@+id/verson_word"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3.575"/>
-        </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/about_padding_top"
-            android:text="长理教务"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/about_padding_top"
-            android:text="本项目开源 欢迎star和fork"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/about_padding_top"
-            android:autoLink="web"
-            android:text="@string/github_website"/>
-        <TextView
-            android:id="@+id/copy"
-            android:background="@drawable/text_underline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/about_padding_top"
-            android:textColor="@color/colorMain"
-            android:text="点我复制"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="关于我们"
-            android:textColor="#424242"
-            android:textSize="18sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/about_padding_top"
-            android:text="@string/about_word"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/reward"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:background="@drawable/button_radius_reward"
-        android:layout_marginTop="@dimen/about_padding_top"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:text="赞赏1￥"
-        android:textColor="#fff"
-        android:textSize="20sp" />
-
-
-
-
-</LinearLayout>
+            android:layout_margin="16.0dip"
+            android:alpha="0.6"
+            android:text="@string/allRights"
+            android:textColor="@color/black"
+            android:textSize="12.0sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

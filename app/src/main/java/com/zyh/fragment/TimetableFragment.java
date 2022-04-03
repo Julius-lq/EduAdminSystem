@@ -66,7 +66,7 @@ public class TimetableFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.timetable, container, false);
+        View view = inflater.inflate(R.layout.fragment_timetable, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.id_viewpager1);
         weekText = (TextView) view.findViewById(R.id.text_week);
         isNowWeek = (TextView) view.findViewById(R.id.text_isnowweek);

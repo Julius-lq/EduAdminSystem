@@ -28,4 +28,11 @@
 <!--    liu-->
     <color name="rippleColor">#ffbdbdbd</color>
     <color name="itemBackColor">#fff0f0f0</color>
+    <color name="gray">#ff8A8A8A</color>
+    <color name="icon_time">#ffF1AE69</color>
+    <color name="icon_teacher">#ff409EFF</color>
+    <color name="icon_location">#ffB13535</color>
+    <color name="icon_calendar">#ff009966</color>
+    <color name="pressed">#ff66CCCC</color>
+    <color name="not_pressed">#ff777878</color>
 </resources>

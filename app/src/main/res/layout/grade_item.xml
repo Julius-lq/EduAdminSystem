@@ -23,7 +23,7 @@
                 android:id="@+id/triangle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/triangle_right"/>
+                android:src="@drawable/triangle_right"/>
             <TextView
                 android:id="@+id/course_name_title"
                 android:layout_width="wrap_content"
