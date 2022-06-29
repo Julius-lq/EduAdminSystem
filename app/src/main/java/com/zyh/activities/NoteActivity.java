@@ -16,8 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kongzue.dialog.v2.SelectDialog;
+import com.zyh.R;
 import com.zyh.beans.Note;
-import com.zyh.fragment.R;
 import com.zyh.utills.CalendarUtil;
 
 import org.litepal.LitePal;

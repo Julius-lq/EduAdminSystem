@@ -3,8 +3,6 @@ package com.zyh.beans;
 import android.widget.TextView;
 
 
-
-
 public class Course {
     private TextView courseName;
     private TextView courseAddress;

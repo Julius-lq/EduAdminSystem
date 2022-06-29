@@ -24,11 +24,11 @@ import com.kongzue.dialog.v2.DialogSettings;
 import com.kongzue.dialog.v2.MessageDialog;
 import com.kongzue.dialog.v2.SelectDialog;
 import com.xuexiang.xui.XUI;
+import com.zyh.R;
 import com.zyh.beans.Account;
 import com.zyh.beans.LoginBean;
 import com.zyh.beans.Version;
 import com.zyh.beans.VersionBean;
-import com.zyh.fragment.R;
 import com.zyh.utills.Utills;
 
 import org.litepal.LitePal;
@@ -119,7 +119,7 @@ public class welcomeActivity extends AppCompatActivity {
                             .add("agent", Version.getVersion())
                             .build();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/login")
+                            .url("http://finalab.cn:8989/login")
                             .post(requestBody)
                             .build();
                     Response response = client.newCall(request).execute();
@@ -223,7 +223,7 @@ public class welcomeActivity extends AppCompatActivity {
                 try{
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/getLastVersion")
+                            .url("http://finalab.cn:8989/getLastVersion")
                             .build();
                     Response response = client.newCall(request).execute();
                     String responseData = response.body().string();

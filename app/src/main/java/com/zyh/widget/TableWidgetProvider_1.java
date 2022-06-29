@@ -12,12 +12,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
+import com.zyh.R;
 import com.zyh.beans.Account;
 import com.zyh.beans.CourseBean;
 import com.zyh.beans.CourseList;
 import com.zyh.beans.CourseId;
 import com.zyh.beans.Note;
-import com.zyh.fragment.R;
 import com.zyh.utills.CalendarUtil;
 import com.zyh.utills.Utills;
 

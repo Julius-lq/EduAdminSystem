@@ -10,7 +10,7 @@ public class GradeBean {
     private String msg;
     private List<Datas> data;
 
-    public class Datas{
+    public static class Datas{
         private String xueqi;
         private String courseName;
         private String score;

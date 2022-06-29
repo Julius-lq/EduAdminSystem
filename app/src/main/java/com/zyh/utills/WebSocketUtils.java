@@ -86,7 +86,7 @@ public class WebSocketUtils {
             public void run() {
                 try{
                     OkHttpClient client = new OkHttpClient();
-                    HttpUrl.Builder urlBuilder = HttpUrl.parse("http://finalab.cn:8081/getUnReadMessage")
+                    HttpUrl.Builder urlBuilder = HttpUrl.parse("http://finalab.cn:8989/getUnReadMessage")
                             .newBuilder();
                     urlBuilder.addQueryParameter("token", token);
                     Request.Builder requestBuilder = new Request.Builder()

@@ -10,7 +10,7 @@ public class Version {
      * 4.修改build.gradle中的版本号
      * */
     //上一版v3.2.2
-    private final static String version = "v3.2.5"; //更新时不能比上一版本少“.”
+    private final static String version = "v3.2.6"; //更新时不能比上一版本少“.”
     public static String getVersion() {
         return version;
     }

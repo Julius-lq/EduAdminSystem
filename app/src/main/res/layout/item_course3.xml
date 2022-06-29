@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/top2"
+            app:cardBackgroundColor="#b509ff"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/course_item_layout_height2"
+            android:layout_alignParentTop="true"
+            android:alpha="0.7"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/course_2_12_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="专业英语"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/table_context_textsize"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/course_2_12_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@云综教C-203"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/table_context_textsize" />
+
+                <TextView
+                    android:id="@+id/course_2_12_property"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="双周"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/table_context_textsize"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/course_2_34"
+            app:cardBackgroundColor="#b509ff"
+            app:cardCornerRadius="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/course_item_layout_height2"
+            android:layout_below="@+id/top2"
+            android:layout_marginTop="@dimen/course_item_margintop"
+            android:alpha="0.7"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/course_2_34_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="专业英语"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/table_context_textsize"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/course_2_34_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@云综教C-203"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/table_context_textsize" />
+
+                <TextView
+                    android:id="@+id/course_2_34_property"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="双周"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/table_context_textsize"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/course_item_layout_height">
+
+                <LinearLayout
+                    android:id="@+id/show_add_note_2_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:id="@+id/add_note_2_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:background="@color/add_note"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/plus" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/note_2_1"
+                    app:cardBackgroundColor="@color/note"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/note_2_1_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/course_2_1"
+                    app:cardBackgroundColor="#4d3900"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/course_2_1_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/course_2_1_place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@云综教C-203"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize" />
+
+                        <TextView
+                            android:id="@+id/course_2_1_property"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="双周"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/course_item_layout_height"
+                android:layout_marginTop="@dimen/course_item_margintop">
+
+                <LinearLayout
+                    android:id="@+id/show_add_note_2_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:id="@+id/add_note_2_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:background="@color/add_note"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/plus" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/note_2_2"
+                    app:cardBackgroundColor="@color/note"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/note_2_2_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/course_2_2"
+                    app:cardBackgroundColor="#f400a1"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/course_2_2_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/course_2_2_place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@云综教C-203"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize" />
+
+                        <TextView
+                            android:id="@+id/course_2_2_property"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="双周"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/course_item_layout_height"
+                android:layout_marginTop="@dimen/course_item_margintop">
+
+                <LinearLayout
+                    android:id="@+id/show_add_note_2_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:id="@+id/add_note_2_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:background="@color/add_note"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/plus" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/note_2_3"
+                    app:cardBackgroundColor="@color/note"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/note_2_3_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/course_2_3"
+                    app:cardBackgroundColor="#daa520"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/course_2_3_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/course_2_3_place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@云综教C-203"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize" />
+
+                        <TextView
+                            android:id="@+id/course_2_3_property"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="双周"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/course_item_layout_height"
+                android:layout_marginTop="@dimen/course_item_margintop">
+
+                <LinearLayout
+                    android:id="@+id/show_add_note_2_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:id="@+id/add_note_2_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:background="@color/add_note"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/plus" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/note_2_4"
+                    app:cardBackgroundColor="@color/note"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/note_2_4_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/course_2_4"
+                    app:cardBackgroundColor="#4169e1"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/course_2_4_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/course_2_4_place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@云综教C-203"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize" />
+
+                        <TextView
+                            android:id="@+id/course_2_4_property"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="双周"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/course_item_layout_height"
+                android:layout_marginTop="@dimen/course_item_margintop">
+
+                <LinearLayout
+                    android:id="@+id/show_add_note_2_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:orientation="vertical" />
+
+                <LinearLayout
+                    android:id="@+id/add_note_2_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:background="@color/add_note"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/plus" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/note_2_5"
+                    app:cardBackgroundColor="@color/note"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/note_2_5_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/course_2_5"
+                    app:cardBackgroundColor="#b509ff"
+                    app:cardCornerRadius="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/course_item_layout_height"
+                    android:alpha="0.7"
+                    android:visibility="invisible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="@dimen/course_item_linearlayout_padding">
+
+                        <TextView
+                            android:id="@+id/course_2_5_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="专业英语"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/course_2_5_place"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@云综教C-203"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize" />
+
+                        <TextView
+                            android:id="@+id/course_2_5_property"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="双周"
+                            android:textColor="#fff"
+                            android:textSize="@dimen/table_context_textsize"
+                            android:visibility="invisible" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

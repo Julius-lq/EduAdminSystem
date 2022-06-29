@@ -1,6 +1,7 @@
 package com.zyh.fragment;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,7 +28,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zyh.R;
 import com.zyh.activities.AboutActivity;
+import com.zyh.activities.BackgroundActivity;
 import com.zyh.activities.LoginActivity;
 import com.zyh.activities.MainActivity;
 import com.zyh.beans.HeadPicBean;
@@ -76,6 +79,8 @@ public class IndividualFragment extends Fragment {
     public static final int PHOTO_REQUEST_CAREMA = 1;// 拍照
     public static final int CROP_PHOTO = 2; //剪裁
     public static final int SELECT_PHOTO = 3;//选取图片
+
+    private Button changeTheme;
 
 
     @Nullable
@@ -134,6 +139,13 @@ public class IndividualFragment extends Fragment {
                         Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
             }
         });
+        changeTheme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), BackgroundActivity.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -146,6 +158,7 @@ public class IndividualFragment extends Fragment {
         college_text = (TextView) view.findViewById(R.id.college);
         marjor_text = (TextView) view.findViewById(R.id.major);
         className_text = (TextView) view.findViewById(R.id.class_name);
+        changeTheme = (Button) view.findViewById(R.id.changeTheme);
         about = view.findViewById(R.id.about);
         name_text.setText(name);
         stuId_text.setText(stuId);
@@ -164,7 +177,7 @@ public class IndividualFragment extends Fragment {
                             .add("cookie", cookie)
                             .build();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/getHeadImg")
+                            .url("http://finalab.cn:8989/getHeadImg")
                             .post(requestBody)
                             .addHeader("token", token)
                             .build();
@@ -269,7 +282,7 @@ public class IndividualFragment extends Fragment {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // 判断存储卡是否可以用，可用进行存储
         if (hasSdcard()) {
-            SimpleDateFormat timeStampFormat = new SimpleDateFormat(
+            @SuppressLint("SimpleDateFormat") SimpleDateFormat timeStampFormat = new SimpleDateFormat(
                     "yyyy_MM_dd_HH_mm_ss");
             String filename = timeStampFormat.format(new Date());
             tempFile = new File(Environment.getExternalStorageDirectory(),
@@ -334,7 +347,7 @@ public class IndividualFragment extends Fragment {
 //                            .add("img",pic)
 //                            .build();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/setHeadImg")
+                            .url("http://finalab.cn:8989/setHeadImg")
                             .post(multipartBody)
                             .addHeader("token", token)
                             .build();

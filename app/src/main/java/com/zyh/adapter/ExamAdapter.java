@@ -1,22 +1,23 @@
-package com.zyh.recyclerView;
+package com.zyh.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.zyh.R;
 import com.zyh.beans.ExamBean;
-import com.zyh.fragment.R;
 
 import java.util.List;
 
 public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ViewHolder> {
-    private List<ExamBean.Exam> mExam;
+    private final List<ExamBean.Exam> mExam;
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
         TextView examYearText;
         TextView examMonthText;
         TextView examDayText;
@@ -24,18 +25,20 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ViewHolder> {
         TextView examStartTimeText;
         TextView examEndTimeText;
         TextView examAddress;
-        public ViewHolder(View view){
+
+        public ViewHolder(View view) {
             super(view);
-            examYearText = (TextView)view.findViewById(R.id.exam_year);
-            examMonthText = (TextView)view.findViewById(R.id.exam_month);
-            examDayText = (TextView)view.findViewById(R.id.exam_day);
-            examNameText = (TextView)view.findViewById(R.id.exam_name);
-            examStartTimeText = (TextView)view.findViewById(R.id.exam_start_time);
-            examEndTimeText = (TextView)view.findViewById(R.id.exam_end_time);
-            examAddress = (TextView)view.findViewById(R.id.exam_address);
+            examYearText = (TextView) view.findViewById(R.id.exam_year);
+            examMonthText = (TextView) view.findViewById(R.id.exam_month);
+            examDayText = (TextView) view.findViewById(R.id.exam_day);
+            examNameText = (TextView) view.findViewById(R.id.exam_name);
+            examStartTimeText = (TextView) view.findViewById(R.id.exam_start_time);
+            examEndTimeText = (TextView) view.findViewById(R.id.exam_end_time);
+            examAddress = (TextView) view.findViewById(R.id.exam_address);
         }
     }
-    public ExamAdapter(List<ExamBean.Exam> examList){
+
+    public ExamAdapter(List<ExamBean.Exam> examList) {
         mExam = examList;
     }
 
@@ -43,9 +46,8 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.exam_item,parent,false);
-        ViewHolder holder = new ExamAdapter.ViewHolder(view);
-        return holder;
+                inflate(R.layout.exam_item, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -65,22 +67,22 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ViewHolder> {
         holder.examDayText.setText(day);
 //        holder.examNameText.setText(exam.getCourseName());
         holder.examStartTimeText.setText(startTime);
-        holder. examEndTimeText.setText(endTime);
-        holder. examAddress.setText(exam.getAddress());
+        holder.examEndTimeText.setText(endTime);
+        holder.examAddress.setText(exam.getAddress());
 
         TextView examNameText = holder.examNameText;
         String courseName = exam.getCourseName();
-        if (courseName.length()>=12){
-            examNameText.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-        }else if (courseName.length()>=6){
-            examNameText.setTextSize(TypedValue.COMPLEX_UNIT_SP,24);
+        if (courseName.length() >= 12) {
+            examNameText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        } else if (courseName.length() >= 6) {
+            examNameText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24);
         }
         examNameText.setText(courseName);
     }
 
     @Override
     public int getItemCount() {
-        if (mExam==null){
+        if (mExam == null) {
             return 0;
         }
         return mExam.size();

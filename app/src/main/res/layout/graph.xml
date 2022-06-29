@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8.0dip"
+        app:contentPadding="8.0dip">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:text="绩点分段图"
+                android:textSize="20.0sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--            android:textColor="@color/primaryText"-->
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="8.0dip"
+                android:orientation="horizontal"
+                android:paddingStart="4.0dip"
+                android:paddingEnd="4.0dip"
+                app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                app:layout_constraintStart_toStartOf="@+id/imageView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:text="成绩"
+                    android:textColor="@color/blue"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:text="等级"
+                    android:textColor="@color/blue"
+                    android:textSize="16.0sp" />
+
+                <TextView
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:text="绩点"
+                    android:textColor="@color/blue"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="250.0dip"
+                android:layout_height="200.0dip"
+                android:layout_marginStart="16.0dip"
+                android:layout_marginEnd="16.0dip"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                app:srcCompat="@drawable/gpa_rule" />
+
+            <Button
+                android:id="@+id/dialog_gp_graphBtnOk"
+                style="@style/buttonBarButtonStyle"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:text="确认"
+                app:layout_constraintEnd_toEndOf="@+id/textView26"
+                app:layout_constraintStart_toStartOf="@+id/textView26"
+                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8.0dip"
+                android:padding="8.0dip"
+                android:text="*当成绩以等级表示时，均分计算取所属成绩区间的最大值"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

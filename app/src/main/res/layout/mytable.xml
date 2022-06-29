@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/course"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/course_list_textview_h" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="50dp">
+
+            <include layout="@layout/course_list_textview_v" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <include
+                    android:id="@+id/course1"
+                    layout="@layout/item_course" />
+
+                <include
+                    android:id="@+id/couse2"
+                    layout="@layout/item_course2" />
+
+                <include
+                    android:id="@+id/course3"
+                    layout="@layout/item_course3" />
+
+                <include
+                    android:id="@+id/couse4"
+                    layout="@layout/item_course4" />
+
+                <include
+                    android:id="@+id/course5"
+                    layout="@layout/item_course5" />
+
+                <include
+                    android:id="@+id/course6"
+                    layout="@layout/item_course6" />
+
+                <include
+                    android:id="@+id/course7"
+                    layout="@layout/item_course7" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

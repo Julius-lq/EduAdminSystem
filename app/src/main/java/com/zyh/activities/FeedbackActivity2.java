@@ -1,6 +1,10 @@
 package com.zyh.activities;
 
+//import static com.zyh.utills.Utils.LoadingDialog;
+//import static com.zyh.utills.Utils.loadDialog;;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -12,7 +16,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.google.android.material.tabs.TabItem;
-import com.zyh.fragment.R;
+import com.zyh.R;
 
 import java.util.Objects;
 
@@ -34,7 +38,7 @@ public class FeedbackActivity2 extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+//        LoadingDialog(this);
         webView = (WebView) findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);       // 这个要加上

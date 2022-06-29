@@ -1,4 +1,4 @@
-package com.zyh.recyclerView;
+package com.zyh.adapter;
 
 import android.content.DialogInterface;
 import androidx.annotation.NonNull;
@@ -12,9 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.kongzue.dialog.v2.SelectDialog;
+import com.zyh.R;
 import com.zyh.activities.NoticeActivity;
 import com.zyh.beans.Messages;
-import com.zyh.fragment.R;
 
 import org.litepal.LitePal;
 
@@ -23,8 +23,8 @@ import java.util.List;
 
 public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {
     private final String TAG = "NoticeAdapter";
-    private List<Messages> messagesList;
-    private NoticeActivity activity;
+    private final List<Messages> messagesList;
+    private final NoticeActivity activity;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView headImg;

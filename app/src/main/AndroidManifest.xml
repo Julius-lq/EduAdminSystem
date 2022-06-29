@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.zyh.fragment">
+    package="com.zyh">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application
         android:name="com.zyh.MyApp"
@@ -22,21 +23,28 @@
         android:theme="@style/AppTheme"
         tools:targetApi="n">
         <activity
-            android:name="com.zyh.activities.FeedbackActivity2"
+            android:name=".activities.ChartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.BackgroundActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tools.NoActionBar" /> <!-- android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge" -->
+        <activity
+            android:name=".activities.FeedbackActivity2"
             android:exported="false"
             android:theme="@style/AppTheme_2" />
         <activity
-            android:name="com.zyh.activities.NoticeActivity"
+            android:name=".activities.NoticeActivity"
             android:theme="@style/AppTheme_2" />
         <activity
-            android:name="com.zyh.activities.NoteActivity"
+            android:name=".activities.NoteActivity"
             android:theme="@style/AppTheme_2" />
         <activity
-            android:name="com.zyh.activities.AboutActivity"
+            android:name=".activities.AboutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_2" />
         <activity
-            android:name="com.zyh.activities.welcomeActivity"
+            android:name=".activities.welcomeActivity"
             android:icon="@mipmap/ic_launcher"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_2">
@@ -47,15 +55,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.zyh.activities.FeedbackActivity"
+            android:name=".activities.FeedbackActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_2" />
         <activity
-            android:name="com.zyh.activities.MainActivity"
+            android:name=".activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_1" />
         <activity
-            android:name="com.zyh.activities.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_2" />
 

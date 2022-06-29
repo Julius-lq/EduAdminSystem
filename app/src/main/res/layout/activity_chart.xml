@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white">
+
+    <!--    <include-->
+    <!--        android:id="@+id/include3"-->
+    <!--        layout="@layout/tool_bar"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/include3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="成绩统计" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="绩点分布"
+                android:textAllCaps="true"
+                android:textSize="16.0sp"
+                app:drawableStartCompat="@drawable/ic_pie_chart" />
+
+            <!--            <xyz.jkwo.wuster.views.PieChart-->
+            <!--                android:id="@+id/pie"-->
+            <!--                android:layout_width="fill_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="16.0dip" />-->
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16.0dip"
+                android:layout_marginBottom="16.0dip"
+                android:gravity="center"
+                android:text="绩点趋势"
+                android:textAllCaps="true"
+                android:textSize="16.0sp"
+                app:drawableStartCompat="@drawable/ic_line_chart" />
+
+            <!--            <xyz.jkwo.wuster.views.LineChart-->
+            <!--                android:id="@+id/line"-->
+            <!--                android:layout_width="fill_parent"-->
+            <!--                android:layout_height="wrap_content" />-->
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

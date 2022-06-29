@@ -1,11 +1,13 @@
 package com.zyh.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -24,6 +26,7 @@ import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +37,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.zyh.R;
 import com.zyh.beans.Version;
-import com.zyh.fragment.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -51,6 +54,9 @@ public class AboutActivity extends AppCompatActivity {
     private ImageView mImageView;
 
     private Toolbar toolbar;
+
+
+    private SharedPreferences bjs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +94,10 @@ public class AboutActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        bjs = this.getSharedPreferences("背景色", Activity.MODE_PRIVATE);
+
+        Log.e("MainActivity2", "背景色为:" + bjs.getString("背景色","#5187F4"));
     }
 
     private void init() {

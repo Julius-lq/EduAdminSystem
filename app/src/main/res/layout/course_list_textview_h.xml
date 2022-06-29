@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="@dimen/table_left_width"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/table_month"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/table_month_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="月"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sunday_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/table_perday_marginleft"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/table_weekday_padding_top_down"
+        android:paddingBottom="@dimen/table_weekday_padding_top_down">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="周日" />
+
+        <TextView
+            android:id="@+id/table_Sundaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/monday_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/table_perday_marginleft"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/table_weekday_padding_top_down"
+        android:paddingBottom="@dimen/table_weekday_padding_top_down">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="周一" />
+
+        <TextView
+            android:id="@+id/table_Mondaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tuesday_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/table_perday_marginleft"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/table_weekday_padding_top_down"
+        android:paddingBottom="@dimen/table_weekday_padding_top_down">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="周二" />
+
+        <TextView
+            android:id="@+id/table_Tuesdaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wednesday_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/table_perday_marginleft"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/table_weekday_padding_top_down"
+        android:paddingBottom="@dimen/table_weekday_padding_top_down">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="周三" />
+
+        <TextView
+            android:id="@+id/table_Wednesdaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thursday_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/table_perday_marginleft"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/table_weekday_padding_top_down"
+        android:paddingBottom="@dimen/table_weekday_padding_top_down">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="周四" />
+
+        <TextView
+            android:id="@+id/table_Thursdaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/friday_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/table_perday_marginleft"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/table_weekday_padding_top_down"
+        android:paddingBottom="@dimen/table_weekday_padding_top_down">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="周五" />
+
+        <TextView
+            android:id="@+id/table_Fridaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/saturday_linear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/table_perday_marginleft"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/table_weekday_padding_top_down"
+        android:paddingBottom="@dimen/table_weekday_padding_top_down">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="周六" />
+
+        <TextView
+            android:id="@+id/table_Saturdaydate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </LinearLayout>
+</LinearLayout>

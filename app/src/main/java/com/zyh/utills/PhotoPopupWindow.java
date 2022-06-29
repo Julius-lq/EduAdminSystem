@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupWindow;
 
-import com.zyh.fragment.R;
+import com.zyh.R;
 
 public class PhotoPopupWindow extends PopupWindow {
 

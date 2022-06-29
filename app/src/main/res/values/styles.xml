@@ -27,7 +27,11 @@
 
 
     <!--    主页面的状态栏(包括底部bottom)-->
-    <style name="AppTheme_1" parent="Theme.AppCompat.Light.NoActionBar">
+<!--    固定浅色模式-->
+    <style name="AppTheme_1" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+<!--        深色模式还是浅色模式跟随系统-->
+<!--    <style name="AppTheme_1" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">-->
+        <!--    <style name="AppTheme_1" parent="Theme.MaterialComponents.DayNight.DarkActionBar">-->
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -35,17 +39,40 @@
     </style>
 
     <!--    欢迎界面、关于界面和登录界面的状态栏(即出去自定义状态栏的默认主题)-->
-    <style name="AppTheme_2" parent="Theme.AppCompat.Light.NoActionBar">
+    <!--    <style name="AppTheme_2" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <!--    <style name="AppTheme_2" parent="Theme.MaterialComponents.DayNight.DarkActionBar">-->
+    <style name="AppTheme_2" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!--    关于界面的toolbat配置-->
+    <!--    关于界面的toolbar配置-->
     <style name="Theme.Tools.PopupOverlay" parent="@style/Widget.AppCompat.PopupMenu.Overflow" />
 
     <style name="Theme.Tools.AppBarOverlay" parent="@style/ThemeOverlay.MaterialComponents.ActionBar" />
 
+    <!--    BackgroundActivity的theme-->
+    <style name="Theme.Tools.NoActionBar" parent="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!--    <style name="Theme.Tools.NoActionBar" parent="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge">-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="course_list_Textview" parent="Widget.AppCompat.TextView">
+<!--        课程表左侧文字-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/table_left_lessonnumber</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="buttonBarButtonStyle" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="textAllCaps">true</item>
+    </style>
 
 </resources>

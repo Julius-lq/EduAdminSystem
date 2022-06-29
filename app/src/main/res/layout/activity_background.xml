@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:stateListAnimator="@null"
+        android:theme="@style/Theme.Tools.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/white"
+            app:popupTheme="@style/Theme.Tools.PopupOverlay" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clipToPadding="false"
+            android:paddingEnd="16.0dp"
+            app:tabContentStart="28.0dp"
+            app:tabGravity="fill"
+            app:tabIndicator="@drawable/tabs_default_indicator"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorColor="#ff06ba9f"
+            app:tabIndicatorGravity="bottom"
+            app:tabIndicatorHeight="3.0dp"
+            app:tabMode="scrollable"
+            app:tabRippleColor="@color/rippleColor"
+            tools:ignore="RtlSymmetry" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.0dp"
+            android:background="@color/itemBackColor" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

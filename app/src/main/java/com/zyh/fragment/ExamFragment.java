@@ -16,10 +16,11 @@ import android.widget.TextView;
 import com.xuexiang.xui.widget.picker.widget.OptionsPickerView;
 import com.xuexiang.xui.widget.picker.widget.builder.OptionsPickerBuilder;
 import com.xuexiang.xui.widget.picker.widget.listener.OnOptionsSelectListener;
+import com.zyh.R;
 import com.zyh.activities.MainActivity;
 import com.zyh.beans.ExamBean;
 import com.zyh.beans.LoginBean;
-import com.zyh.recyclerView.ExamAdapter;
+import com.zyh.adapter.ExamAdapter;
 import com.zyh.utills.Utills;
 
 import java.util.List;
@@ -144,7 +145,7 @@ public class ExamFragment extends Fragment {
                             .add("xueqi",semester)
                             .build();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/getKsap")
+                            .url("http://finalab.cn:8989/getKsap")
                             .post(requestBody)
                             .addHeader("token",token)
                             .build();

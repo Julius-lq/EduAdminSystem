@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.kongzue.dialog.v2.TipDialog;
-import com.zyh.fragment.R;
+import com.zyh.R;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -100,7 +100,7 @@ public class FeedbackActivity extends AppCompatActivity {
                             .add("content",contentString)
                             .build();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/advice")
+                            .url("http://finalab.cn:8989/advice")
                             .post(requestBody)
                             .addHeader("token",token)
                             .build();

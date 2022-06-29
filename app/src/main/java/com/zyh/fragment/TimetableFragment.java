@@ -1,12 +1,15 @@
 package com.zyh.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +20,7 @@ import android.widget.TextView;
 import com.xuexiang.xui.widget.picker.widget.OptionsPickerView;
 import com.xuexiang.xui.widget.picker.widget.builder.OptionsPickerBuilder;
 import com.xuexiang.xui.widget.picker.widget.listener.OnOptionsSelectListener;
+import com.zyh.R;
 import com.zyh.activities.MainActivity;
 import com.zyh.beans.Account;
 import com.zyh.beans.CourseBean;
@@ -28,6 +32,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class TimetableFragment extends Fragment {
     public static boolean isThisSemester = false;
@@ -87,7 +92,7 @@ public class TimetableFragment extends Fragment {
 
         originalSemester = semester;
         nowWeek = loginBean.getData().getNowWeek();
-        thisWeek = Integer.valueOf(nowWeek);
+        thisWeek = Integer.parseInt(nowWeek);
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -103,7 +108,7 @@ public class TimetableFragment extends Fragment {
                 }
                 Log.d("GradeFragment", datas.length + " 0.0");
                 updateLoginDB();
-                getActivity().runOnUiThread(new Runnable() {
+                requireActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         //initDatas();//初始化数据
@@ -126,10 +131,10 @@ public class TimetableFragment extends Fragment {
 
     private void updateLoginDB() {
         //更新当前用户的当前学期、周次、登录时间
-        SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat();// 格式化时间
         sdf.applyPattern("yyyy-MM-dd");// a为am/pm的标记
         Date date = new Date();// 获取当前时间
-        String username = ((MainActivity) getActivity()).username;
+        String username = ((MainActivity) requireActivity()).username;
         Account account = new Account();
         account.setSemester(semester);
         account.setWeek(nowWeek);
@@ -138,7 +143,7 @@ public class TimetableFragment extends Fragment {
     }
 
     private void showPickerView() {
-        OptionsPickerView pvOptions = new OptionsPickerBuilder(mainActivity, new OnOptionsSelectListener() {
+        OptionsPickerView<Object> pvOptions = new OptionsPickerBuilder(mainActivity, new OnOptionsSelectListener() {
             @Override
             public void onOptionsSelect(int options1, int options2, int options3, View v) {
                 showTimetable(options1);
@@ -157,14 +162,12 @@ public class TimetableFragment extends Fragment {
         Utills.clear();
         semester = datas[options];
         weekText.setText("1");
-        for (int i = 0; i < isFinished.length; i++) {
-            isFinished[i] = false;
-        }
+        Arrays.fill(isFinished, false);
         new Thread(new Runnable() {
             @Override
             public void run() {
                 Utills.postAllTimetable(loginBean, TimetableFragment.this, semester, 1);
-                getActivity().runOnUiThread(new Runnable() {
+                requireActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         initDatas();
@@ -185,6 +188,7 @@ public class TimetableFragment extends Fragment {
         mAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
             private int mChildCount = 0;
 
+            @NonNull
             @Override
             public Fragment getItem(int position) {//从集合中获取对应位置的Fragment
                 week = String.valueOf(position);

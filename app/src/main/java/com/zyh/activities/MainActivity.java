@@ -1,19 +1,26 @@
 package com.zyh.activities;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.R.attr;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.transition.AutoTransition;
+import android.transition.Fade;
+import android.transition.Transition;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -25,14 +32,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.gyf.immersionbar.ImmersionBar;
 import com.xuexiang.xui.XUI;
+import com.zyh.R;
 import com.zyh.beans.CourseList;
 import com.zyh.beans.LoginBean;
 import com.zyh.beans.SemesterBean;
 import com.zyh.fragment.ExamFragment;
 import com.zyh.fragment.GradeFragment;
 import com.zyh.fragment.IndividualFragment;
-import com.zyh.fragment.R;
 import com.zyh.fragment.TimetableFragment;
 import com.zyh.utills.Utills;
 import com.zyh.utills.WebSocketUtils;
@@ -47,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
     private long exitTime = 0;
     private String token;
     private TextView topNmae;
+
+    //默认为false，主题一旦改变则设置为true
+    public static boolean change = false;
 
     //声明四个Tab的布局文件
     private LinearLayout mTabTimetable;
@@ -84,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
     public String[] semesters;
 
     private WebSocketUtils websocket;
+
+
+    private SharedPreferences qdy;
+    private SharedPreferences bjt;
+    private SharedPreferences bjs;
+
+    private RelativeLayout topbar;
+
+    private boolean isPause;//解决点击更换主题进入到一个Activity后回退后的主题刷新问题
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,6 +146,48 @@ public class MainActivity extends AppCompatActivity {
 //                .add(guideStep1)
 //                .show();
         websocket = new WebSocketUtils(MainActivity.this, token, pot);
+
+
+        qdy = this.getSharedPreferences("启动页", Activity.MODE_PRIVATE);
+        bjt = this.getSharedPreferences("背景图", Activity.MODE_PRIVATE);
+        bjs = this.getSharedPreferences("背景色", Activity.MODE_PRIVATE);
+
+        Log.e("MainActivity2", "背景图为:" + bjt.toString());
+        Log.e("MainActivity2", "背景色为:" + bjs.getString("背景色", "#5187F4"));
+
+        ImmersionBar.with(this)
+                .fitsSystemWindows(true)
+                .statusBarColor(bjs.getString("背景色", "#5187F4"))
+                .navigationBarColor(R.color.backgroundColor)
+                .autoDarkModeEnable(true)
+                //.keyboardEnable(true)
+                //.keyboardMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+                .init();
+        topbar.setBackgroundColor(Color.parseColor(bjs.getString("背景色", "#5187F4")));
+
+//        int[] colors = new int[]{-256, -16776961, -1, -16776961, -65536, -1};
+        int color = Color.parseColor(bjs.getString("背景色", "#5187F4"));
+//        (int normal, int pressed, int focused, int unable)
+        int color2 = R.color.black;
+//        Toast.makeText(this, "color的值是" + color, Toast.LENGTH_SHORT).show();
+        int[] colors = new int[]{color, color2, color2, color2, color, color2};
+//                             pressed focused normal   focused  unable normal
+
+        int[][] states = new int[6][];
+//        states[0] = new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled};
+        states[0] = new int[]{attr.state_selected, android.R.attr.state_enabled};
+        states[1] = new int[]{attr.state_enabled, android.R.attr.state_focused};
+        states[2] = new int[]{android.R.attr.state_enabled};
+        states[3] = new int[]{android.R.attr.state_focused};
+        states[4] = new int[]{android.R.attr.state_selected};
+        states[5] = new int[]{};
+
+        ColorStateList csl = new ColorStateList(states, colors);
+        navigationView.setItemTextColor(csl);
+        navigationView.setItemIconTintList(csl);
+//        System.out.println(navigationView.getSelectedItemId());
+
+
     }
 
 
@@ -137,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         ((AppCompatActivity) context).finish();
     }
 
-    private FragmentTransaction getTrasaction(){
+    private FragmentTransaction getTrasaction() {
         //获取FragmentManager对象
         FragmentManager manager = getSupportFragmentManager();
         //获取FragmentTransaction对象
@@ -148,37 +210,35 @@ public class MainActivity extends AppCompatActivity {
         return transaction;
     }
 
+    @SuppressLint("NonConstantResourceId")
     private void initEvents() {
-        navigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.menu_timetable:
-                        selectTab(0);
-                        break;
-                    case R.id.menu_grade:
-                        selectTab(1);
-                        break;
-                    case R.id.menu_exam:
-                        selectTab(2);
-                        break;
-                    case R.id.menu_individual:
-                        selectTab(3);
-                        break;
-                }
-                return true;
+        navigationView.setOnNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()) {
+                case R.id.menu_timetable:
+                    selectTab(0);
+                    break;
+                case R.id.menu_grade:
+                    selectTab(1);
+                    break;
+                case R.id.menu_exam:
+                    selectTab(2);
+                    break;
+                case R.id.menu_individual:
+                    selectTab(3);
+                    break;
             }
+            return true;
         });
 
-        renovate.setOnClickListener(new View.OnClickListener(){
+        renovate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String semester = TimetableFragment.semester;
-                LitePal.deleteAll(CourseList.class,"semester = ? and username = ?",semester,username);
-                CourseList couList = LitePal.where("semester = ? and username = ?",semester,username).findFirst(CourseList.class);
-                if(couList==null){
+                LitePal.deleteAll(CourseList.class, "semester = ? and username = ?", semester, username);
+                CourseList couList = LitePal.where("semester = ? and username = ?", semester, username).findFirst(CourseList.class);
+                if (couList == null) {
                     Toast.makeText(MainActivity.this, "刷新成功", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this, "刷新失败", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -190,8 +250,8 @@ public class MainActivity extends AppCompatActivity {
         addFeedback = (LinearLayout) findViewById(R.id.addFeedback);
         notice = findViewById(R.id.notice);
         pot = findViewById(R.id.notice_pot);
-        renovate=(AppCompatImageView) findViewById(R.id.renovate) ;
-
+        renovate = (AppCompatImageView) findViewById(R.id.renovate);
+        topbar = (RelativeLayout) findViewById(R.id.topbar);
         navigationView = (BottomNavigationView) findViewById(R.id.navigation);
     }
 
@@ -282,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/getAllSemester")
+                            .url("http://finalab.cn:8989/getAllSemester")
                             .addHeader("token", token)
                             .build();
                     Response response = client.newCall(request).execute();
@@ -307,11 +367,30 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    //跳转到其他页面时，记录isPause
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isPause = true;
+    }
+
+    //重新返回本Activity时，刷新页面
     @Override
     protected void onResume() {
         WebSocketUtils.hasUnReadMessage(MainActivity.this, pot);
         WebSocketUtils.getUnReadMessage(token);
         super.onResume();
+
+        if (isPause) {
+//            actionStart(this, loginBean, username);
+//            refresh(loginBean, username);
+//            isPause = false;
+        }
+        if (change){
+            refresh(loginBean, username);
+            change = false;
+        }
     }
 
     @Override
@@ -319,5 +398,22 @@ public class MainActivity extends AppCompatActivity {
         websocket.close();
         super.onDestroy();
     }
+
+    private void refresh(LoginBean loginBean, String username) {
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        intent.putExtra("loginBean", loginBean);
+        intent.putExtra("username", username);
+//        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        startActivity(intent);
+        finish();
+        overridePendingTransition(0, 0);
+//        Transition enter = getWindow().getEnterTransition();
+//        Transition exit = getWindow().getExitTransition();
+//        getWindow().setEnterTransition(exit);
+//        getWindow().setExitTransition(enter);
+//        getWindow().setExitTransition(new Fade());
+//        getWindow().setEnterTransition(new Fade());
+    }
+
 }
 

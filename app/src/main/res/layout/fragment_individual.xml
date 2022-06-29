@@ -23,8 +23,8 @@
             android:paddingBottom="20dp">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="68.0dip"
-                android:layout_height="68.0dip"
+                android:layout_width="68dp"
+                android:layout_height="68dp"
                 android:layout_margin="2dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="34.0dip"
@@ -238,6 +238,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
 
         <Button
+            android:id="@+id/changeTheme"
             android:layout_width="300dp"
             android:layout_height="38dp"
             android:layout_marginTop="10dp"

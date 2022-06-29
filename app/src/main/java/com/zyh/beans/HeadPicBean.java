@@ -1,8 +1,6 @@
 package com.zyh.beans;
 
 
-
-
 public class HeadPicBean {
     private String code;
     private String msg;

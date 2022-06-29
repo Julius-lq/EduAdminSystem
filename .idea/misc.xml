@@ -32,8 +32,20 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/feedback.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/grade.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/grade_pressed.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/home_top.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_chart.xml" value="0.1585" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_home.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_line_chart.xml" value="0.1585" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_menu.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_pie_chart.xml" value="0.1585" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_renovate.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_search.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_set.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_star.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_tese.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_tool.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/ic_twotone_search_24.xml" value="0.1235" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/icon_calendar.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/icon_location.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/icon_teacher.xml" value="0.1425" />
@@ -42,6 +54,9 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/individual.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/individual_pressed.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/major.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/mtrl_tabs_default_indicator.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/nav.xml" value="0.1425" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/nav_select.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/notice.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/right_arrow.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/round_edge_notice_read_all.xml" value="0.1425" />
@@ -59,35 +74,76 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/xueyuan.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/drawable/zuanye.xml" value="0.1425" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_about.xml" value="0.152" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_background.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_chart.xml" value="0.2511584800741427" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_color.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_color2.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_feed2.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_feedback.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_feedback2.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_home.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_new.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_note.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/activity_notice.xml" value="0.1125" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/bottom.xml" value="0.536" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/course_list_textview.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/course_list_textview_h.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/course_list_textview_v.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/exam.xml" value="0.1125" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/exam_item.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/fragment_bj1.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/fragment_exam.xml" value="0.1125" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/fragment_grade.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/fragment_grade.xml" value="0.264" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/fragment_individual.xml" value="0.1082427536231884" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/fragment_timetable.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/grade.xml" value="0.1125" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/grade_item.xml" value="0.4" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/graph.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/individual.xml" value="0.264" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_bg_color.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_bg_pic.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_bgs.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_bj.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_bjs.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_course.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_course2.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_course3.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_course4.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_course5.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_course6.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_course7.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_table.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_table_top.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/item_table_top_cardview34.xml" value="0.12335359675785208" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/jian.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/loading.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/main2.xml" value="0.20652173913043478" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/mytable.xml" value="0.20652173913043478" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/pop_item.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/tab1.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/table.xml" value="0.3075933075933076" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/table_widget_1.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/temp.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/test.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/timetable.xml" value="0.3693972179289026" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/tool_bar.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/top.xml" value="0.536" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/university.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/view_dialog.xml" value="0.3873581847649919" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/layout/view_grade_dialog.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/menu/main_bottom_navigation.xml" value="0.2212962962962963" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/menu/test.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/EduAdminSystem/app/src/main/res/menu/toolbar.xml" value="0.25364583333333335" />
       </map>
     </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="android.annotation.SuppressLint" />
+    </list>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />

@@ -8,9 +8,9 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zyh.R;
 import com.zyh.beans.Messages;
-import com.zyh.fragment.R;
-import com.zyh.recyclerView.NoticeAdapter;
+import com.zyh.adapter.NoticeAdapter;
 
 import org.litepal.LitePal;
 

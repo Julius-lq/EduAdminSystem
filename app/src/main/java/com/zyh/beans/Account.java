@@ -1,11 +1,7 @@
 package com.zyh.beans;
 
-import android.content.Intent;
 
 import org.litepal.crud.LitePalSupport;
-
-
-
 
 public class Account extends LitePalSupport {
 
@@ -16,6 +12,9 @@ public class Account extends LitePalSupport {
     private String semester;
     private String time;
     private String week;
+
+    public Account() {
+    }
 
     public String getUsername() {
         return username;

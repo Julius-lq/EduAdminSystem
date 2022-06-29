@@ -1,13 +1,16 @@
 package com.zyh.activities;
 
 
+import android.annotation.SuppressLint;
 import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -21,16 +24,17 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.kongzue.dialog.v2.MessageDialog;
+import com.zyh.R;
 import com.zyh.beans.Account;
 import com.zyh.beans.LoginBean;
 import com.zyh.beans.Version;
-import com.zyh.fragment.R;
 import com.zyh.utills.Utills;
 
 import org.litepal.LitePal;
 
 import java.net.SocketTimeoutException;
 import java.util.List;
+import java.util.Objects;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -49,6 +53,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static String username;
 
     private String password;
+
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,42 +63,49 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         nm.cancel(10);
         sendRequest = (Button) findViewById(R.id.send_request);
-        usernameEdit = (EditText)findViewById(R.id.username);
-        passwordEdit = (EditText)findViewById(R.id.password);
+        usernameEdit = (EditText) findViewById(R.id.username);
+        passwordEdit = (EditText) findViewById(R.id.password);
+        /*
+          暂时填充一下
+         */
+        usernameEdit.setText("202008060114");
+        passwordEdit.setText("20140807Lq.");
+
         ifView = (ImageView) findViewById(R.id.if_view);
         ifSaveAccount = (CheckBox) findViewById(R.id.if_save);
-        progressBar = (ProgressBar) findViewById(R.id.waitting) ;
+        progressBar = (ProgressBar) findViewById(R.id.waitting);
         progressBar.setVisibility(View.GONE);
         sendRequest.setOnClickListener(this);
         ifView.setOnClickListener(this);
-        Log.d("LoginActivity","ActionBegin");
+        Log.d("LoginActivity", "ActionBegin");
 
-        List<Account> lastAccount = LitePal.where("isLast = ?","1").find(Account.class);
-        if (!lastAccount.isEmpty()){
+        List<Account> lastAccount = LitePal.where("isLast = ?", "1").find(Account.class);
+        if (!lastAccount.isEmpty()) {
             usernameEdit.setText(lastAccount.get(0).getUsername());
             String pw = lastAccount.get(0).getPassword();
-            if (pw!=null && pw!=""){
+            if (pw != null && !pw.equals("")) {
                 passwordEdit.setText(pw);
                 ifSaveAccount.setChecked(true);
             }
         }
     }
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void onClick(View v){
-        if (v.getId()==R.id.send_request){
+    public void onClick(View v) {
+        if (v.getId() == R.id.send_request) {
             username = usernameEdit.getText().toString();
             password = passwordEdit.getText().toString();
-            if (username.equals("")||password.equals("")){
+            if (username.equals("") || password.equals("")) {
                 String nameword;
-                if (username.equals("") && password.equals("")) nameword="账号和密码";
-                else if(username.equals("")) nameword="账号";
-                else  nameword="密码";
-                Toast.makeText(this,"请输入"+nameword,Toast.LENGTH_SHORT).show();
+                if (username.equals("") && password.equals("")) nameword = "账号和密码";
+                else if (username.equals("")) nameword = "账号";
+                else nameword = "密码";
+                Toast.makeText(this, "请输入" + nameword, Toast.LENGTH_SHORT).show();
                 return;
             }
             waitBegin(); //设置缓冲圈可见，登录按钮不可点击
-            sendRequestWithOkHttp(username,password);
-        }else if(v.getId()==R.id.if_view){
+            sendRequestWithOkHttp(username, password);
+        } else if (v.getId() == R.id.if_view) {
             //获取当前图片ConstantState类对象
             Drawable.ConstantState constantState = ifView.getDrawable().getCurrent().getConstantState();
             //获取需要比较的图片ConstantState类对象
@@ -107,11 +120,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void waitBegin(){
+    private void waitBegin() {
         progressBar.setVisibility(View.VISIBLE);
         sendRequest.setEnabled(false);
     }
-    private void waitEnd(){
+
+    private void waitEnd() {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -125,34 +139,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try{
+                try {
                     OkHttpClient client = new OkHttpClient();
                     RequestBody requestBody = new FormBody.Builder()
-                            .add("username",username)
-                            .add("password",password)
+                            .add("username", username)
+                            .add("password", password)
                             .add("agent", Version.getVersion())
                             .build();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/login")
+                            .url("http://finalab.cn:8989/login")
                             .post(requestBody)
                             .build();
                     Response response = client.newCall(request).execute();
-                    String responseData = response.body().string();
+                    String responseData = Objects.requireNonNull(response.body()).string();
                     //showResponse(responseData);
-                    Log.d("LoginActivity","responseData:  "+responseData);
-                    LoginBean loginBean = Utills.parseJSON(responseData,LoginBean.class);
-                    loginHandle(loginBean,username,password);
-                }catch (SocketTimeoutException e){
+                    Log.d("LoginActivity", "responseData:  " + responseData);
+                    LoginBean loginBean = Utills.parseJSON(responseData, LoginBean.class);
+                    loginHandle(loginBean, username, password);
+                } catch (SocketTimeoutException e) {
                     showTimeoutDialog();
                     waitEnd();
                 } catch (Exception e) {
-                    Log.d("okHttpError","okHttpError");
+                    Log.d("okHttpError", "okHttpError");
                     e.printStackTrace();
                 }
             }
         }).start();
     }
-    private void showTimeoutDialog(){
+
+    private void showTimeoutDialog() {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -167,27 +182,34 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
-    private void loginHandle(LoginBean loginBean, String username, String password){
+
+    private void loginHandle(LoginBean loginBean, String username, String password) {
         String code;
         code = loginBean.getCode();
-        if(code.equals("200")){
-            if (ifSaveAccount.isChecked()){
-                updateDB(username,password);
-            }else{
-                updateDB(username);
-            }
-            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-            MainActivity.actionStart(this, loginBean,username);
-        }else if(code.equals("401")){
-            showToast("账号或密码错误");
-        }else if (code.equals("501")){
-            showToast("服务器错误，请联系开发人员");
-        }else {//502
-            showToast("教务系统无相应");
+        switch (code) {
+            case "200":
+                if (ifSaveAccount.isChecked()) {
+                    updateDB(username, password);
+                } else {
+                    updateDB(username);
+                }
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                MainActivity.actionStart(this, loginBean, username);
+                break;
+            case "401":
+                showToast("账号或密码错误");
+                break;
+            case "501":
+                showToast("服务器错误，请联系开发人员");
+                break;
+            default: //502
+                showToast("教务系统无相应");
+                break;
         }
         waitEnd();
     }
-    private void showToast(final String msg){
+
+    private void showToast(final String msg) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -196,57 +218,57 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         });
     }
 
-    private void updateDB(String username,String password){
-        List<Account> accounts = LitePal.where("username = ?",username).find(Account.class);
+    private void updateDB(String username, String password) {
+        List<Account> accounts = LitePal.where("username = ?", username).find(Account.class);
         Account account = new Account();
-        if (accounts.isEmpty()){
+        if (accounts.isEmpty()) {
             setAllLast();
             account.setUsername(username);
             account.setPassword(password);
             account.setIsLast("1");
             account.save();
-        }else{
+        } else {
             setAllLast();
             account.setPassword(password);
             account.setIsLast("1");
-            account.updateAll("username = ?",username);
+            account.updateAll("username = ?", username);
         }
         List<Account> accountsAll = LitePal.findAll(Account.class);
-        String allAccount="";
-        for(Account account1 : accountsAll){
-            allAccount+=account1.toString();
+        StringBuilder allAccount = new StringBuilder();
+        for (Account account1 : accountsAll) {
+            allAccount.append(account1.toString());
         }
-        Log.d("allAccount",allAccount);
+        Log.d("allAccount", allAccount.toString());
     }
 
-    private void updateDB(String username){
-        List<Account> accounts = LitePal.where("username = ?",username).find(Account.class);
+    private void updateDB(String username) {
+        List<Account> accounts = LitePal.where("username = ?", username).find(Account.class);
         Account account = new Account();
-        if (accounts.isEmpty()){
+        if (accounts.isEmpty()) {
             setAllLast();
             account.setUsername(username);
             account.setIsLast("1");
             account.save();
-        }else{
+        } else {
             setAllLast();
-            if (!accounts.get(0).getPassword().equals("")){
+            if (!accounts.get(0).getPassword().equals("")) {
                 account.setPassword("");
             }
             account.setIsLast("1");
-            account.updateAll("username = ?",username);
+            account.updateAll("username = ?", username);
         }
         List<Account> accountsAll = LitePal.findAll(Account.class);
-        String allAccount="";
-        for(Account account1 : accountsAll){
-            allAccount+=account1.toString();
+        String allAccount = "";
+        for (Account account1 : accountsAll) {
+            allAccount += account1.toString();
         }
-        Log.d("allAccount",allAccount);
+        Log.d("allAccount", allAccount);
     }
 
     /**
      * 将所有项的last设为0
      */
-    private void setAllLast(){
+    private void setAllLast() {
         Account account = new Account();
         account.setIsLast("0");
         account.updateAll();

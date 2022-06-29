@@ -1,6 +1,7 @@
 package com.zyh.fragment;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,13 +19,16 @@ import com.kongzue.dialog.v2.MessageDialog;
 import com.xuexiang.xui.widget.picker.widget.OptionsPickerView;
 import com.xuexiang.xui.widget.picker.widget.builder.OptionsPickerBuilder;
 import com.xuexiang.xui.widget.picker.widget.listener.OnOptionsSelectListener;
+import com.zyh.R;
+import com.zyh.activities.LoginActivity;
 import com.zyh.activities.MainActivity;
 import com.zyh.beans.GradeBean;
 import com.zyh.beans.LoginBean;
-import com.zyh.recyclerView.GradeAdapter;
+import com.zyh.adapter.GradeAdapter;
 import com.zyh.utills.Utills;
 
 import java.util.List;
+import java.util.Objects;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -46,6 +51,8 @@ public class GradeFragment extends Fragment {
     public String semester;
     private List<GradeBean.Datas> gradeList;
     private Boolean isFinished;
+
+    private Button btnChart;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -59,6 +66,15 @@ public class GradeFragment extends Fragment {
         selectGradeLinear = view.findViewById(R.id.select_grade_linear);
         grade_point_block = view.findViewById(R.id.grade_point_block);
         grade_point = view.findViewById(R.id.grade_point);
+//        btnChart = view.findViewById(R.id.btnChart);
+//        btnChart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(mainActivity, LoginActivity.class);
+//                startActivity(intent);
+//                mainActivity.finish();
+//            }
+//        });
         waitingAndSet();
         return view;
     }
@@ -73,22 +89,19 @@ public class GradeFragment extends Fragment {
                         break;
                     }
                 }
-                getActivity().runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        loginBean = mainActivity.loginBean;
-                        System.out.println("test:"+loginBean.getData().getToken()+" "+loginBean.getData().getCookie());
-                        selectGradeLinear.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                showPickerView();
-                            }
-                        });
-                        semester = loginBean.getData().getNowXueqi();
-                        for(int i=0;i<datas.length;i++){
-                            if (datas[i].equals(semester)){
-                                showGrade(i);
-                            }
+                requireActivity().runOnUiThread(() -> {
+                    loginBean = mainActivity.loginBean;
+                    System.out.println("test:"+loginBean.getData().getToken()+" "+loginBean.getData().getCookie());
+                    selectGradeLinear.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            showPickerView();
+                        }
+                    });
+                    semester = loginBean.getData().getNowXueqi();
+                    for(int i=0;i<datas.length;i++){
+                        if (datas[i].equals(semester)){
+                            showGrade(i);
                         }
                     }
                 });
@@ -157,7 +170,7 @@ public class GradeFragment extends Fragment {
                             .add("xueqi",semester)
                             .build();
                     Request request = new Request.Builder()
-                            .url("http://finalab.cn:8081/queryScore")
+                            .url("http://finalab.cn:8989/queryScore")
                             .post(requestBody)
                             .addHeader("token",token)
                             .build();
