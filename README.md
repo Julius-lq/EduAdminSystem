@@ -2,7 +2,7 @@
 
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16) [![License](https://camo.githubusercontent.com/266dbf1c12e7e7f112914eb37138734857bde343e4fca6e01dfeb40553cf209a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d417061636865253230322d3445423142412e737667)](https://www.apache.org/licenses/LICENSE-2.0.html) [![img](https://camo.githubusercontent.com/f1cf1b972d8aea68d69294a4a3249e4d6ed1d7d76e27cb72edcd81a26214f428/68747470733a2f2f6a69747061636b2e696f2f762f6875616e6779616e62696e2f736d6172745461626c652e737667)](https://jitpack.io/#huangyanbin/smartTable)
 
- <img src="\screenshoot\ic_launcher-playstore.png" style="zoom:25%;" />
+ <img src="/screenshoot\ic_launcher-playstore.png" style="zoom:25%;" />
 
 ## 声明
 
